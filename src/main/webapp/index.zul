@@ -1,6 +1,7 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
 <zk>
 	<borderlayout hflex="1" vflex="1">
-		<north height="200px" border="none" >
+		<north height="270px" border="none" >
 			<include src="/productivityCalculator.zul"/>
 		</north>
 		<center autoscroll="true">

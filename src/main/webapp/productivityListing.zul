@@ -1,0 +1,27 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<zk>
+	<window	apply="org.zkoss.bind.BindComposer" 
+		viewModel="@id('vm') @init('com.vk.productivizer.ProductivityListingViewModel')" 
+		border="normal" hflex="1" contentStyle="overflow:auto">
+		<grid hflex="1" model="@load(vm.productivityListing)">
+			<columns>
+				<column><label value="From"/></column>
+				<column><label value="To"/></column>
+				<column><label value="Duration"/></column>
+				<column><label value="Activity Type"/></column>
+				<column><label value="Description"/></column>
+			</columns>
+			<rows>
+				<template name="model">
+					<row>
+						<label value="@load(each.from)"/>
+						<label value="@load(each.to)"/>
+						<label value="@load(each.duration)"/>
+						<label value="@load(each.activityType.displayLabel)"/>
+						<label value="@load(each.description)"/>
+					</row>
+				</template>
+			</rows>
+		</grid>
+	</window>
+</zk>
