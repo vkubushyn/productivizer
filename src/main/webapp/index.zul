@@ -1,0 +1,10 @@
+<zk>
+	<borderlayout hflex="1" vflex="1">
+		<north height="200px" border="none" >
+			<include src="/productivityCalculator.zul"/>
+		</north>
+		<center autoscroll="true">
+			<include src="/productivityListing.zul"/>
+		</center>
+	</borderlayout>
+</zk>

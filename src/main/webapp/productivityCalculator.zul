@@ -1,0 +1,50 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<zk>
+	<div apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('vm') @init('com.vk.productivizer.ProductivityCalculatorViewModel')">
+        <vlayout>
+        	<div sclass="banner" hflex="1">
+	        	<hbox hflex="1" align="center">
+	        		<div sclass="banner-head" width="400px">
+	        			You have <label value="@load(vm.currentBalance)"/> to spend.
+	        		</div>
+	        	</hbox>
+	        </div>
+			<grid>
+				<columns>
+					<column label="Type" width="120px"/>
+					<column label="Content"/>
+				</columns>
+				<rows>
+					<row>
+						<label value="From Date/Time"/>
+						<datebox id="fromDateBox" cols="12" format="long+medium" value="@bind(vm.entry.from)" 
+							hflex="1" constraint="no future" width="100px" mold="rounded"/>
+					</row>
+					<row>
+						<label value="To Date/Time"/>
+						<datebox id="toDateBox" cols="12" format="long+medium" value="@bind(vm.entry.to)"
+							hflex="1" constraint="no future" width="100px" mold="rounded"/>
+					</row>
+					<row>
+						<label value="Description"/>
+						<textbox hflex="1" value="@bind(vm.entry.description)" width="200px" mold="rounded"/>
+					</row>
+					<row>
+						<label value="Duration"/>
+						<label value="@load(vm.duration)"/>
+					</row>
+					<row>
+						<label value="Activity type"/>
+						<combobox model="@load(vm.activityTypes)" selectedItem="@bind(vm.entry.activityType)">
+							<template name="model">
+								<comboitem label="@load(each.displayLabel)"/>
+							</template>
+						</combobox> 
+					</row>
+				</rows>
+			</grid>
+			<button onClick="@command('save')" label="Add Entry"/>
+		</vlayout>
+	</div>
+</zk>
