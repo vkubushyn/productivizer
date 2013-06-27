@@ -44,6 +44,19 @@
 	
 	<!-- Spring configuration -->
 	<!-- Initialize spring context -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:productivizer-context.xml
+		</param-value>
+	</context-param>
+	
+	<!-- Run the prod spring profile by default -->
+	<context-param>
+		<param-name>spring.profiles.default</param-name>
+		<param-value>prod</param-value>
+	</context-param>
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

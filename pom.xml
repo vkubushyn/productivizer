@@ -8,6 +8,9 @@
 		<zk.version>6.5.1</zk.version>
 		<spring.version>3.1.2.RELEASE</spring.version>
 		<joda.time.version>2.1</joda.time.version>
+		<aws.sdk.version>1.4.7</aws.sdk.version>
+		<cglib.version>2.2.2</cglib.version>
+		<guava.version>14.0.1</guava.version>
 	</properties>
 	<packaging>war</packaging>
 	<name>Productivizer Application to Become More Productive</name>
@@ -55,7 +58,7 @@
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<version>2.2.2</version>
+			<version>${cglib.version}</version>
 		</dependency>
 		
 		<!-- Utilities -->
@@ -63,6 +66,18 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>${joda.time.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		
+		<!-- AWS -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>${aws.sdk.version}</version>
 		</dependency>
 	</dependencies>
 	
@@ -79,6 +94,12 @@
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<stopKey>foo</stopKey>
 					<stopPort>9999</stopPort>
+					<systemProperties>
+						<systemProperty>
+							<key>spring.profiles.active</key>
+							<value>test</value>
+						</systemProperty>
+					</systemProperties>
 				</configuration>
 				<executions>
 					<execution>

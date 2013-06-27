@@ -1,4 +1,4 @@
-package com.vk.productivizer;
+package com.vk.productivizer.zk;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;

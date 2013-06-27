@@ -1,4 +1,4 @@
-package com.vk.productivizer;
+package com.vk.productivizer.zk;
 
 public enum ActivityType {
 	PRODUCTIVE("Productive"), LEISURE("Leisure");
